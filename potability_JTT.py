@@ -34,7 +34,7 @@ st.set_page_config(page_title='Potability', layout="centered", page_icon='💧')
 
 # Lectura de archivos
 
-df = pd.read_csv('C:/Users/Tejo/.vscode/samplerepo/drinking_water_potability.csv')
+df = pd.read_csv('https://github.com/javiertejera/Water-potability/blob/main/drinking_water_potability.csv')
 
 # Sustituyo los valores nulos en las columnas pH, sulfatos y trihalometanos.
 
