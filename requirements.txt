@@ -1,0 +1,16 @@
+streamlit
+streamlit_option_menu
+numpy
+pandas
+seaborn
+matplotlib.pyplot
+PIL
+wget
+os
+json
+warnings
+plotly.graph_objs
+chart_studio.plotly
+plotly.offline
+cufflinks
+pycaret.classificaion
