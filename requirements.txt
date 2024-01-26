@@ -6,7 +6,6 @@ seaborn
 matplotlib
 Pillow
 wget
-json
 warnings
 plotly.graph_objs
 chart_studio.plotly
