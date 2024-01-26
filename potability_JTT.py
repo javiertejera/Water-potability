@@ -295,7 +295,7 @@ if menu == 'Modelo':
     plot_model(model, 'learning', display_format= 'streamlit')
     st.markdown("<h0 style='text-align:justify;'> </h0>", unsafe_allow_html=True)
     st.markdown("<h0 style='text-align:justify;'>Por último, se muestra una figura con la importancia que tiene cada variable a la hora de realizar las predicciones con el modelo seleccionado.</h0>", unsafe_allow_html=True) 
-    image = Image.open('C:/Users/Tejo/.vscode/samplerepo/feature_gbc.jpg')
+    image = Image.open('https://github.com/javiertejera/Water-potability/blob/main/feature_gbc.jpg')
     st.image(image)
     st.markdown("<h0 style='text-align:justify;'> </h0>", unsafe_allow_html=True)
     
