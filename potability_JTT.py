@@ -280,7 +280,7 @@ if menu == 'Análisis':
 
 if menu == 'Modelo':
     st.markdown("<h0 style='text-align:justify;'>En la siguiente tabla se muestran los resultados obtenidos del entrenamiento de diferentes modelos utilizando la librería pycaret.</h0>", unsafe_allow_html=True)
-    results = pd.read_csv('C:/Users/Tejo/.vscode/samplerepo/results_model_potability.csv')
+    results = pd.read_csv('https://github.com/javiertejera/Water-potability/blob/main/results_model_potability.csv')
     st.dataframe(results)
     st.markdown("<h0 style='text-align:justify;'>Podemos observar como tenemos cuatro modelos con la misma exactitud del 90%. El siguiente factor a tener en cuenta para la elección del modelo con el que vamos a trabajar va a ser la precisión. A mayor precisión menor número de falsos positivos cometerá el modelo. En el caso del agua potable no nos interesa tener falsos positivos, ya que, un falso positivo significa etiquetar como potable un agua que no lo es. Lo que puede acarrear graves consecuencias, como enfermedades en la población e incluso muertes. Teniendo esto en cuenta, el modelo elegido fue el Gradient boosting classifier, con una precisión del 83%.</h0>", unsafe_allow_html=True)
     st.markdown("<h0 style='text-align:justify;'>De manera simplificada el modelo gradient boosting se basa en el ajuste de diferentes modelos sencillos en los que cada modelo aprende del anterior.</h0>", unsafe_allow_html=True)
