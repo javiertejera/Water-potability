@@ -184,7 +184,9 @@ if menu == 'Análisis':
 
         st.markdown("<h0 style='text-align:justify;'>Se puede observar que las distribuciones son parecidas en todas las variables tanto para el agua potable como para el agua no potable. Sin embargo, podemos ver tres claras excepciones: pH, trihalometanos y turbidez. Esto es debido a que se tuvo que realizar un limpiado de los datos atendiendo a la normativa para aguas potables. En el caso del pH había en el dataset aguas con valores fuera de los límites 6.5-9.5 que son los aceptados etiquetadas como potables. Para la concentración de trihalometanos el límite establecido es de 80 ppb y en el caso de la turbidez el valor máximo admitido es de 5 NTU, habiendo muestras etiquetadas como potables fuera de esos límites. </h0>", unsafe_allow_html=True)
         st.markdown("<h0 style='text-align:justify;'>En la siguiente gráfica se muestra una comparación un poco diferente de las distribuciones de las variables. </h0>", unsafe_allow_html=True)
-        
+
+        image = Image.open('feature_gbc.jpg')
+        st.image(image)
         fig, axes = plt.subplots(3, 3, figsize=(16, 15))
 
         plt.subplot(3,3,1)
