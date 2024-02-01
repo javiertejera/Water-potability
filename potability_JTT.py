@@ -294,7 +294,6 @@ if menu == 'Modelo':
     st.markdown("<h0 style='text-align:justify;'>A continuación se muestra la representación de la curva de aprendizaje del modelo. Se puede considerar que el modelo es bueno, ya que, la validación del modelo va aumentando según disminuye la cantidad de datos de entrenamiento.</h0>", unsafe_allow_html=True)
     image = Image.open('learning_curve.jpg')
     st.image(image)
-    plot_model(model, 'learning', display_format= 'streamlit')
     st.markdown("<h0 style='text-align:justify;'> </h0>", unsafe_allow_html=True)
     st.markdown("<h0 style='text-align:justify;'>Por último, se muestra una figura con la importancia que tiene cada variable a la hora de realizar las predicciones con el modelo seleccionado.</h0>", unsafe_allow_html=True) 
     image = Image.open('feature_gbc.jpg')
