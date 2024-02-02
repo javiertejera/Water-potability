@@ -28,6 +28,7 @@ from pycaret.classification import *
 #----------------------------------CONFIGURACIÓN DE PÁGINA--------------------------------------------------------
 
 st.set_page_config(page_title='Potability', layout="centered", page_icon='💧')
+st.secrets[theme]
 
 
 #----------------------------------PREPROCESAMIENTO DE DATOS--------------------------------------------------------
@@ -64,8 +65,6 @@ model = create_model('gbc')
 
 st.title('Water potability predictor') 
 st.markdown("<img src='https://s3.abcstatics.com/media/ciencia/2020/10/14/juyasiudya-kv4H--1248x698@abc.jpg' width='700' height='350'>", unsafe_allow_html=True)
-st.markdown('Javier Tejera')
-st.markdown('15/06/23')
 
 #Menú horizontal
 menu = option_menu(
