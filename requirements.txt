@@ -9,6 +9,7 @@ pycaret
 seaborn
 streamlit
 streamlit_option_menu
+toml
 wget
 
 
