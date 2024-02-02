@@ -28,7 +28,7 @@ from pycaret.classification import *
 #----------------------------------CONFIGURACIÓN DE PÁGINA--------------------------------------------------------
 
 st.set_page_config(page_title='Potability', layout="centered", page_icon='💧')
-st.write(st.secrets[theme])
+
 
 
 #----------------------------------PREPROCESAMIENTO DE DATOS--------------------------------------------------------
