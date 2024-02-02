@@ -33,7 +33,10 @@ st.markdown(
     f"""
     <style>
     [data-testid="stHeader"] {{
-    background-color: rgba (0, 0, 0,,0);
+    background-color: rgba (0, 0, 0,0);
+    }}
+    [data-testid="stHorizontalContainer"] {{
+        background-color: #2552f7;
     }}
     [data-testid="stMarkdownContainer"]{{                 
     color: #101010;
