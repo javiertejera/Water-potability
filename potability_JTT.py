@@ -35,8 +35,14 @@ st.markdown(
     [data-testid="stHeader"] {{
     background-color: rgba (0, 0, 0,0);
     }}
-    [data-testid="stHorizontalContainer"] {{
+    [data-testid="stPrimaryColor"] {{
         background-color: #2552f7;
+    }}
+    [data-testid="stBackgroundColor"] {{
+        background-color: #eaecf1;
+    }}
+    [data-testid="stSecondaryBackgroundColor"] {{
+        background-color: #66b7e4;
     }}
     [data-testid="stMarkdownContainer"]{{                 
     color: #101010;
