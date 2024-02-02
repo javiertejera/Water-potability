@@ -29,7 +29,13 @@ from pycaret.classification import *
 
 st.set_page_config(page_title='Potability', layout="centered", page_icon='💧')
 
-
+config = toml.loads(requests.get('config.toml').text)
+theme_info = config.get("theme", {})
+if theme_info:
+    st.markdown(f"## {theme_info.get('name', 'Default Theme')} Theme")
+    st.write(f"Font: {theme_info.get('font', 'Default Font')}")
+    st.write(f"Base Theme: {theme_info.get('base', 'Default Base')}")
+    st.write(f"Primary Color: {theme_info.get('primaryColor', 'Default Color')}")
 
 #----------------------------------PREPROCESAMIENTO DE DATOS--------------------------------------------------------
 
