@@ -1,0 +1,14 @@
+chart_studio
+cufflinks
+matplotlib
+numpy
+pandas
+Pillow
+plotly
+pycaret
+seaborn
+streamlit
+streamlit_option_menu
+wget
+
+

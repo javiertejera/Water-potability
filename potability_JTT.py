@@ -30,11 +30,12 @@ from pycaret.classification import *
 st.set_page_config(page_title='Potability', layout="centered", page_icon='💧')
 
 
+
 #----------------------------------PREPROCESAMIENTO DE DATOS--------------------------------------------------------
 
 # Lectura de archivos
 
-df = pd.read_csv('C:/Users/Tejo/.vscode/samplerepo/drinking_water_potability.csv')
+df = pd.read_csv('drinking_water_potability.csv')
 
 # Sustituyo los valores nulos en las columnas pH, sulfatos y trihalometanos.
 
@@ -64,8 +65,6 @@ model = create_model('gbc')
 
 st.title('Water potability predictor') 
 st.markdown("<img src='https://s3.abcstatics.com/media/ciencia/2020/10/14/juyasiudya-kv4H--1248x698@abc.jpg' width='700' height='350'>", unsafe_allow_html=True)
-st.markdown('Javier Tejera')
-st.markdown('15/06/23')
 
 #Menú horizontal
 menu = option_menu(
@@ -184,84 +183,10 @@ if menu == 'Análisis':
 
         st.markdown("<h0 style='text-align:justify;'>Se puede observar que las distribuciones son parecidas en todas las variables tanto para el agua potable como para el agua no potable. Sin embargo, podemos ver tres claras excepciones: pH, trihalometanos y turbidez. Esto es debido a que se tuvo que realizar un limpiado de los datos atendiendo a la normativa para aguas potables. En el caso del pH había en el dataset aguas con valores fuera de los límites 6.5-9.5 que son los aceptados etiquetadas como potables. Para la concentración de trihalometanos el límite establecido es de 80 ppb y en el caso de la turbidez el valor máximo admitido es de 5 NTU, habiendo muestras etiquetadas como potables fuera de esos límites. </h0>", unsafe_allow_html=True)
         st.markdown("<h0 style='text-align:justify;'>En la siguiente gráfica se muestra una comparación un poco diferente de las distribuciones de las variables. </h0>", unsafe_allow_html=True)
-        
+
+        image = Image.open('distribucion_boxplot.jpg')
+        st.image(image)
         fig, axes = plt.subplots(3, 3, figsize=(16, 15))
-
-        plt.subplot(3,3,1)
-        ax = sns.boxplot(x=df['Potability'], y=df['ph'], palette={1:'#47f1ef', 0:'#658685'})
-        etiquetas = ['No potable', 'Potable']
-        plt.xticks(range(len(etiquetas)), etiquetas)
-        ax.set(xlabel=None)
-        plt.title('pH')
-        plt.ylabel('pH')
-
-
-        plt.subplot(3,3,2)
-        ax = sns.boxplot(x=df['Potability'], y=df['Hardness'], palette={1:'#47f1ef', 0:'#658685'})
-        etiquetas = ['No potable', 'Potable']
-        plt.xticks(range(len(etiquetas)), etiquetas)
-        ax.set(xlabel=None)
-        plt.title('Dureza')
-        plt.ylabel('Dureza, ppm')
-
-        plt.subplot(3,3,3)
-        ax = sns.boxplot(x=df['Potability'], y=df['Solids'], palette={1:'#47f1ef', 0:'#658685'})
-        etiquetas = ['No potable', 'Potable']
-        plt.xticks(range(len(etiquetas)), etiquetas)
-        ax.set(xlabel=None)
-        plt.title('Sólidos')
-        plt.ylabel('[Sólidos], ppm')
-
-        plt.subplot(3,3,4)
-        ax = sns.boxplot(x=df['Potability'], y=df['Chloramines'], palette={1:'#47f1ef', 0:'#658685'})
-        etiquetas = ['No potable', 'Potable']
-        plt.xticks(range(len(etiquetas)), etiquetas)
-        ax.set(xlabel=None)
-        plt.title('Cloraminas')
-        plt.ylabel('[Cloraminas], ppm')
-
-        plt.subplot(3,3,5)
-        ax = sns.boxplot(x=df['Potability'], y=df['Sulfate'], palette={1:'#47f1ef', 0:'#658685'})
-        etiquetas = ['No potable', 'Potable']
-        plt.xticks(range(len(etiquetas)), etiquetas)
-        ax.set(xlabel=None)
-        plt.title('Sulfatos')
-        plt.ylabel('[Sulfatos], ppm')
-
-        plt.subplot(3,3,6)
-        ax = sns.boxplot(x=df['Potability'], y=df['Conductivity'], palette={1:'#47f1ef', 0:'#658685'})
-        etiquetas = ['No potable', 'Potable']
-        plt.xticks(range(len(etiquetas)), etiquetas)
-        ax.set(xlabel=None)
-        plt.title('Conductividad')
-        plt.ylabel('Conductividad, μS/cm')
-
-
-        plt.subplot(3,3,7)
-        ax = sns.boxplot(x=df['Potability'], y=df['Organic_carbon'], palette={1:'#47f1ef', 0:'#658685'})
-        etiquetas = ['No potable', 'Potable']
-        plt.xticks(range(len(etiquetas)), etiquetas)
-        ax.set(xlabel=None)
-        plt.title('Carbono orgánico')
-        plt.ylabel('[Carbono orgánico], ppm')
-
-        plt.subplot(3,3,8)
-        ax = sns.boxplot(x=df['Potability'], y=df['Trihalomethanes'], palette={1:'#47f1ef', 0:'#658685'})
-        etiquetas = ['No potable', 'Potable']
-        plt.xticks(range(len(etiquetas)), etiquetas)
-        ax.set(xlabel=None)
-        plt.title('Triahalometanos')
-        plt.ylabel('[Trihalometanos], ppb')
-
-        plt.subplot(3,3,9)
-        ax = sns.boxplot(x=df['Potability'], y=df['Turbidity'], palette={1:'#47f1ef', 0:'#658685'})
-        etiquetas = ['No potable', 'Potable']
-        plt.xticks(range(len(etiquetas)), etiquetas)
-        ax.set(xlabel=None)
-        plt.title('Turbidez')
-        plt.ylabel('Turbidez, NTU')
-        st.pyplot(fig)
-
 
         st.markdown("<h0 style='text-align:justify;'>Se observa como en general las muestras de aguas no potables presentan un abanico más amplio de valores, tanto por arriba, como por abajo. Apareciendo menor cantidad de outliers para las muestras de agua potable. De nuevo vemos como los valores de pH aparecen truncados por abajo, mientras que, los valores de trihalometanos y turbidez aparecen truncados por arriba debido al preprocesamiento de los datos.</h0>", unsafe_allow_html=True)
 
@@ -280,7 +205,7 @@ if menu == 'Análisis':
 
 if menu == 'Modelo':
     st.markdown("<h0 style='text-align:justify;'>En la siguiente tabla se muestran los resultados obtenidos del entrenamiento de diferentes modelos utilizando la librería pycaret.</h0>", unsafe_allow_html=True)
-    results = pd.read_csv('C:/Users/Tejo/.vscode/samplerepo/results_model_potability.csv')
+    results = pd.read_csv('results_model_potability.csv')
     st.dataframe(results)
     st.markdown("<h0 style='text-align:justify;'>Podemos observar como tenemos cuatro modelos con la misma exactitud del 90%. El siguiente factor a tener en cuenta para la elección del modelo con el que vamos a trabajar va a ser la precisión. A mayor precisión menor número de falsos positivos cometerá el modelo. En el caso del agua potable no nos interesa tener falsos positivos, ya que, un falso positivo significa etiquetar como potable un agua que no lo es. Lo que puede acarrear graves consecuencias, como enfermedades en la población e incluso muertes. Teniendo esto en cuenta, el modelo elegido fue el Gradient boosting classifier, con una precisión del 83%.</h0>", unsafe_allow_html=True)
     st.markdown("<h0 style='text-align:justify;'>De manera simplificada el modelo gradient boosting se basa en el ajuste de diferentes modelos sencillos en los que cada modelo aprende del anterior.</h0>", unsafe_allow_html=True)
@@ -292,10 +217,11 @@ if menu == 'Modelo':
     plot_model(model, 'confusion_matrix', display_format= 'streamlit')
     st.markdown("<h0 style='text-align:justify;'> </h0>", unsafe_allow_html=True)
     st.markdown("<h0 style='text-align:justify;'>A continuación se muestra la representación de la curva de aprendizaje del modelo. Se puede considerar que el modelo es bueno, ya que, la validación del modelo va aumentando según disminuye la cantidad de datos de entrenamiento.</h0>", unsafe_allow_html=True)
-    plot_model(model, 'learning', display_format= 'streamlit')
+    image = Image.open('learning_curve.jpg')
+    st.image(image)
     st.markdown("<h0 style='text-align:justify;'> </h0>", unsafe_allow_html=True)
     st.markdown("<h0 style='text-align:justify;'>Por último, se muestra una figura con la importancia que tiene cada variable a la hora de realizar las predicciones con el modelo seleccionado.</h0>", unsafe_allow_html=True) 
-    image = Image.open('C:/Users/Tejo/.vscode/samplerepo/feature_gbc.jpg')
+    image = Image.open('feature_gbc.jpg')
     st.image(image)
     st.markdown("<h0 style='text-align:justify;'> </h0>", unsafe_allow_html=True)
     
