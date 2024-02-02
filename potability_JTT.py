@@ -29,6 +29,22 @@ from pycaret.classification import *
 
 st.set_page_config(page_title='Potability', layout="centered", page_icon='💧')
 
+st.markdown(
+    f"""
+    <style>
+    [data-testid="stHeader"] {{
+    background-color: rgba(0, 0, 0, 0);
+    }}
+    [data-testid="stMarkdownContainer"]{{                 
+    color: #ff5a60;
+        }}
+    .menu .nav-item .nav-link.active[data-v-4323f8ce] {{
+    background-color: #eaecf1;
+    }}
+    </style>
+    """
+ , unsafe_allow_html=True)
+
 
 #----------------------------------PREPROCESAMIENTO DE DATOS--------------------------------------------------------
 
