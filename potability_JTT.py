@@ -33,10 +33,10 @@ st.markdown(
     f"""
     <style>
     [data-testid="stHeader"] {{
-    background-color: rgba(0, 0, 0, 0);
+    background-color: #eaecf1;
     }}
     [data-testid="stMarkdownContainer"]{{                 
-    color: #ff5a60;
+    color: #101010;
         }}
     .menu .nav-item .nav-link.active[data-v-4323f8ce] {{
     background-color: #eaecf1;
