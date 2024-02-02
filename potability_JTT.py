@@ -50,9 +50,9 @@ st.markdown(
     .menu .nav-item .nav-link.active[data-v-4323f8ce] {{
     background-color: #eaecf1;
     }}
-    body {
+    body {{
         background-color: #eaecf1;
-    }
+    }}
     </style>
     """
  , unsafe_allow_html=True)
