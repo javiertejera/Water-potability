@@ -6,6 +6,4 @@ Se han estudiado diferentes modelos de machine learning hasta encontrar el que m
 
 Una vez encontrado el mejor modelo se desarrolló una herramienta con la que introduciendo las características de una muestra de agua podamos saber si ese agua es apta para el consumo humano o no.
 
-Puedes ver la aplicación de streamlit en el siguiente enlace
-
-[STREAMLIT APP] (https://javier-tejera-water-potability.streamlit.app/)
+Puedes ver la aplicación de streamlit en el siguiente enlace: (https://javier-tejera-water-potability.streamlit.app/)
