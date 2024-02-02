@@ -51,6 +51,10 @@ st.markdown(
     background-color: #eaecf1;
     }}
     </style>
+    <body> {{
+        background-color: #eaecf1;
+    }}
+    </body>
     """
  , unsafe_allow_html=True)
 
